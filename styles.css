@@ -1,0 +1,32 @@
+body {
+	transition: all 1s ease-in-out;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	background-image: url("filet-o-fish.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	margin: 0;
+}
+
+#title {
+	text-align: center;
+	font-size: 5em;
+	font-family: sans-serif;
+	/* `text-stroke` doesn't seem to be supported
+	text-stroke-width: 1em;
+	text-stroke-color: red; */
+	text-shadow: -0.1rem -0.1rem 0 var(--title-outline-colour), 0.1rem -0.1rem 0 var(--title-outline-colour), -0.1rem 0.1rem 0 var(--title-outline-colour), 0.1rem 0.1rem 0 var(--title-outline-colour);
+}
+
+#title::selection {
+	/* TODO: make the highlight colours randomised - might scrap this because it's just extra detail and it doesn't work and probably won't */
+	color: var(--title-selection-colour);
+	background-color: var(--title-selection-bg-colour);
+}
+
+#bounce-container {
+	width: 100vw;
+	height: 100%;
+}
