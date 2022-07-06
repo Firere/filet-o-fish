@@ -30,7 +30,7 @@ $(function() {
 
 	let previousImage = "./filet-o-fish.png"; // the starting image is always this one as declared in `styles.css`
 	
-	const adjectivesToDescribeTheBestFood = ["good", "great", "amazing", "awesome", "ephereal", "excellent", "fabulous", "gorgeous", "loving", "marvellous", "pleasing", "precious", "splendid", "superb"];
+	const adjectivesToDescribeTheBestFood = ["amazing", "appetising", "awesome", "ephereal", "excellent", "fabulous", "good", "gorgeous", "great", "loving", "marvellous", "pleasing", "precious", "splendid", "superb"];
 	$("#text").text(adjectivesToDescribeTheBestFood[Math.floor(Math.random() * adjectivesToDescribeTheBestFood.length)]);
 
 	const titleInterval = setInterval(function(){ // randomise the colour of the title every second
