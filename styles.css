@@ -10,23 +10,29 @@ body {
 	margin: 0;
 }
 
+#container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
 #title {
 	text-align: center;
+	height: 2em;
+	flex: 1;
 	font-size: 5em;
-	font-family: sans-serif;
-	/* `text-stroke` doesn't seem to be supported
-	text-stroke-width: 1em;
-	text-stroke-color: red; */
+	font-family: "Impact", sans-serif;
 	text-shadow: -0.1rem -0.1rem 0 var(--title-outline-colour), 0.1rem -0.1rem 0 var(--title-outline-colour), -0.1rem 0.1rem 0 var(--title-outline-colour), 0.1rem 0.1rem 0 var(--title-outline-colour);
+	margin: 0;
 }
 
 #title::selection {
-	/* TODO: make the highlight colours randomised - might scrap this because it's just extra detail and it doesn't work and probably won't */
 	color: var(--title-selection-colour);
 	background-color: var(--title-selection-bg-colour);
 }
 
-#bounce-container {
+#container iframe {
+	background: transparent;
+	flex: 9;
 	width: 100vw;
-	height: 100%;
 }

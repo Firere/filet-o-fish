@@ -1,12 +1,10 @@
 $(function() {
-
 	// the background image starts off as a transparent one so better randomise the colour
 	$("body").css("background-color", `hsl(${Math.floor(Math.random() * 360)}, 35%, 50%)`);
 
 	$(":root").css({
 		"--title-outline-colour": `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`,
-		"color": `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`,
-		"background-color": `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`
+		"color": `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`
 	});
 	$("#title").css("color", `hsl(${Math.floor(Math.random() * 360)}, 35%, 50%)`);
 
@@ -25,17 +23,18 @@ $(function() {
 		"https://s.yimg.com/hz/en_us/Finance/US_AFTP_SILICONALLEY_H_LIVE/Why_McDonalds_FiletoFish_sandwiches_are-d04e4b170b2bb38e743897fe3b7d70a4",
 		"https://i.ytimg.com/vi/OJCpnLj1QYI/hqdefault.jpg",
 		"https://www.gannett-cdn.com/presto/2019/03/06/USAT/56e351d7-f591-4c56-909b-42533871f7cc-5926_Filet-O-Fish.png?crop=1023,575,x0,y398&width=1023&height=575&format=pjpg&auto=webp",
-		"https://foodlocate.com/storage/media/dishes_main/1299182/conversions/dish_thumbnail.jpg"
+		"https://foodlocate.com/storage/media/dishes_main/1299182/conversions/dish_thumbnail.jpg",
+		"https://static.wikia.nocookie.net/meme-time/images/1/15/Killer_Fish.png/revision/latest?cb=20211009044114",
+		"https://images.genius.com/b91d1dc0ff228d53f403806733a4a8e6.480x360x1.jpg"
 	];
 
 	let previousImage = "./filet-o-fish.png"; // the starting image is always this one as declared in `styles.css`
-	
-	const adjectivesToDescribeTheBestFood = ["amazing", "appetising", "awesome", "ephereal", "excellent", "fabulous", "good", "gorgeous", "great", "loving", "marvellous", "pleasing", "precious", "splendid", "superb"];
-	$("#text").text(adjectivesToDescribeTheBestFood[Math.floor(Math.random() * adjectivesToDescribeTheBestFood.length)]);
 
 	const titleInterval = setInterval(function(){ // randomise the colour of the title every second
-		$("#title").css("color", `hsl(${Math.floor(Math.random() * 360)}, 35%, 50%)`);
-		$(":root").css("--title-outline-colour", `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`);
+		$(":root").css({
+			"color": `hsl(${Math.floor(Math.random() * 360)}, 35%, 50%)`,
+			"--title-outline-colour": `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`,
+		});
 	}, 1000);
 
 	const backgroundInterval = setInterval(function(){ // randomise the background image every 5 seconds
@@ -51,16 +50,9 @@ $(function() {
 		// randomise the background colour as well using the same values as the title colour randomisation
 		$("body").css("background-color", `hsl(${Math.floor(Math.random() * 360)}, 35%, 50%)`);
 		$("body").css("background-image", `url(${newImage})`);
+		$("body").css("background-repeat", "no-repeat");
+		$("body").css("background-size", "cover");
 		$("#favicon").attr("href", newImage);
 		console.log(newImage);
 	}, 5000);
-
-	// TODO: script to make the text bounce around in the viewport like the DVD logo we all know and love
-
-	document.getElementById("terminator").addEventListener("click", function(){
-		clearInterval(titleInterval);
-		clearInterval(backgroundInterval);
-		document.getElementById("script").remove;
-	});
-
 });
